@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>Operava logo</title>
+  <rect width="128" height="128" rx="24" fill="#6D28D9"/>
+  <path fill="#FFFFFF" d="M32 28 L68 64 L32 100 Z"/>
+  <path fill="#EDE9FE" d="M60 28 L96 64 L60 100 Z"/>
+</svg>

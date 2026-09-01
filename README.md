@@ -1,22 +1,31 @@
-# Operava Maps landing
+# Operava standalone website folders
 
-Standalone Cloudflare Pages site.
+Deploy this repo as its own Cloudflare Pages project (`map.operavaglobal.com`).
+Do not merge it into the www marketing SPA.
 
-Production URL after you attach the custom domain:
+## Folders (pick the file you need)
+
+| URL path | File | Use |
+|---|---|---|
+| `/google/verifiedbusiness/` | Maps landing page | Facebook / public Maps link |
+| `/bimi/bimi.svg` | BIMI SVG Tiny PS | `default._bimi` `l=` record |
+| `/favicon/favicon.svg` | App / tab icon | HTML favicon |
+| `/favicon/favicon-32.svg` | 32px favicon | optional |
+| `/logo/logo.svg` | Square brand mark | general web |
+| `/icons/apple-touch.svg` | Apple touch icon | optional |
+
+Public Maps URL after DNS:
 
 `https://map.operavaglobal.com/google/verifiedbusiness`
 
-Maps destination (stable, not a short link):
+BIMI option:
+
+`https://map.operavaglobal.com/bimi/bimi.svg`
+
+or later on www:
+
+`https://www.operavaglobal.com/bimi/bimi.svg`
+
+Maps destination:
 
 `https://www.google.com/maps?cid=13781392094140743681`
-
-## Deploy separately (do not mix with www.operavaglobal.com)
-
-1. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect git
-2. Repository: `jelvan-ricolcol/Operava-Website`
-3. Build command: leave empty
-4. Output directory: `/`
-5. Custom domain: `map.operavaglobal.com`
-6. DNS CNAME `map` → the Pages project (`operava-map.pages.dev`)
-
-Do not attach this project to `www.operavaglobal.com`.

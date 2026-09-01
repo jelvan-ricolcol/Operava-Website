@@ -3,4 +3,19 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
-  Cache-Control: public, max-age=300
+
+/bimi/*
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=86400
+
+/favicon/*
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=86400
+
+/logo/*
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=86400
+
+/icons/*
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=86400
