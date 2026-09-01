@@ -1,6 +1,4 @@
-# Serve the OG landing page as HTML (do not 302 this path; Meta must read tags).
 /businessverified/googlemaps /businessverified/googlemaps/index.html 200
 /businessverified/googlemaps/ /businessverified/googlemaps/index.html 200
 
-# Unknown routes go to the verified Google Maps listing.
-/* https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic 302
+/* https://www.google.com/maps?cid=13781392094140743681 302

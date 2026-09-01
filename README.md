@@ -1,15 +1,10 @@
 # Operava Website
 
-Public Cloudflare Pages sources for [operavaglobal.com](https://www.operavaglobal.com).
+Do not use `maps.app.goo.gl` short links as the primary destination.
+Those paths are case-sensitive. Typing `mfpdv86cuqlvyrzx8` (lowercase) returns Firebase Dynamic Link Not Found.
 
-## Live route
+Stable destination:
 
-`https://www.operavaglobal.com/businessverified/googlemaps`
+`https://www.google.com/maps?cid=13781392094140743681`
 
-Verified Google Maps destination:
-
-`https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic`
-
-Missing pages (`404.html` and `_redirects`) send visitors to that same listing instead of a dead “no pages found” screen.
-
-The `/businessverified/googlemaps` path itself stays as HTML so Meta can read Open Graph tags. It is not an HTTP 302.
+This is the verified Operava Global Solutions listing.

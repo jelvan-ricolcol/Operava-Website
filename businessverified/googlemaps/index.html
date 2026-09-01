@@ -31,22 +31,7 @@
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Operava Global Solutions — find us on Google Maps"
-    />
     <meta property="og:locale" content="en_US" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Operava Global Solutions | Google Maps" />
-    <meta
-      name="twitter:description"
-      content="Find Operava Global Solutions on Google Maps and view our business location."
-    />
-    <meta
-      name="twitter:image"
-      content="https://res.cloudinary.com/sdaxzncs/image/upload/c_fill,w_1200,h_630,f_jpg,q_auto/v1786240859/Cover%20Photo.png"
-    />
 
     <link
       rel="icon"
@@ -99,11 +84,7 @@
         padding: 2rem 1.75rem;
         box-shadow: 0 16px 40px rgba(76, 29, 149, 0.08);
       }
-      h1 {
-        font-size: 1.375rem;
-        margin: 0 0 0.75rem;
-        letter-spacing: -0.02em;
-      }
+      h1 { font-size: 1.375rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; }
       p { margin: 0 0 1.25rem; color: var(--muted); }
       .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
       a.button {
@@ -125,10 +106,7 @@
         outline: 3px solid var(--focus);
         outline-offset: 3px;
       }
-      a.home {
-        color: var(--brand-dark);
-        font-weight: 600;
-      }
+      a.home { color: var(--brand-dark); font-weight: 600; }
       .status { font-size: 0.95rem; }
     </style>
   </head>
@@ -139,14 +117,14 @@
         <p class="status" role="status">Opening Operava on Google Maps…</p>
         <h1>Operava Global Solutions</h1>
         <p>
-          Tap the button to open the official listing in a new tab.
-          If the Google Maps app is installed, the device will open the app instead.
+          Opens in a new tab. If the Google Maps app is installed, the device opens the app.
+          Otherwise the same listing stays in the browser.
         </p>
         <div class="actions">
           <a
             id="maps-link"
             class="button"
-            href="https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic"
+            href="https://www.google.com/maps?cid=13781392094140743681"
             target="_blank"
             rel="noopener noreferrer"
           >Open Operava on Google Maps</a>
@@ -156,9 +134,9 @@
     </main>
     <script>
       (function () {
-        var WEB = "https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic";
+        var WEB = "https://www.google.com/maps?cid=13781392094140743681";
         var INTENT =
-          "intent://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=" +
+          "intent://www.google.com/maps?cid=13781392094140743681#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=" +
           encodeURIComponent(WEB) +
           ";end";
 
@@ -167,11 +145,8 @@
         }
 
         function openMaps(fromClick) {
-          var url = mapsUrl();
-          var opened = window.open(url, "_blank", "noopener,noreferrer");
-          if (!opened && !fromClick) {
-            window.location.assign(WEB);
-          }
+          var opened = window.open(mapsUrl(), "_blank", "noopener,noreferrer");
+          if (!opened && !fromClick) window.location.assign(WEB);
         }
 
         var link = document.getElementById("maps-link");
@@ -179,21 +154,12 @@
           link.addEventListener("click", function (event) {
             event.preventDefault();
             openMaps(true);
-            window.setTimeout(function () {
-              if (document.visibilityState === "visible") {
-                window.location.assign(WEB);
-              }
-            }, 1200);
           });
         }
 
         var ua = navigator.userAgent || "";
-        if (/facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|Slackbot|Pinterest|Discordbot|TelegramBot|Googlebot/i.test(ua)) {
-          return;
-        }
-        window.setTimeout(function () {
-          openMaps(false);
-        }, 400);
+        if (/facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|Slackbot|Pinterest|Discordbot|TelegramBot|Googlebot/i.test(ua)) return;
+        window.setTimeout(function () { openMaps(false); }, 400);
       })();
     </script>
   </body>

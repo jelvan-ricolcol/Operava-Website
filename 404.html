@@ -4,34 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Operava Global Solutions | Google Maps</title>
-    <link rel="canonical" href="https://www.operavaglobal.com/businessverified/googlemaps" />
   </head>
   <body>
     <p>Opening Operava on Google Maps…</p>
     <p>
       <a
         id="maps-link"
-        href="https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic"
+        href="https://www.google.com/maps?cid=13781392094140743681"
         target="_blank"
         rel="noopener noreferrer"
       >Open Operava on Google Maps</a>
     </p>
     <script>
       (function () {
-        var WEB = "https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic";
+        var WEB = "https://www.google.com/maps?cid=13781392094140743681";
         var INTENT =
-          "intent://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=" +
+          "intent://www.google.com/maps?cid=13781392094140743681#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=" +
           encodeURIComponent(WEB) +
           ";end";
         var url = /Android/i.test(navigator.userAgent || "") ? INTENT : WEB;
-        var link = document.getElementById("maps-link");
-        if (link) {
-          link.addEventListener("click", function (event) {
-            event.preventDefault();
-            var opened = window.open(url, "_blank", "noopener,noreferrer");
-            if (!opened) window.location.assign(WEB);
-          });
-        }
         var opened = window.open(url, "_blank", "noopener,noreferrer");
         if (!opened) window.location.assign(WEB);
       })();
