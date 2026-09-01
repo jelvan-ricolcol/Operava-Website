@@ -1,9 +1,4 @@
-/**
- * Optional Cloudflare Pages Function.
- * Prefer the static businessverified/googlemaps/index.html file.
- * Destination is hard-coded. Query parameters are ignored.
- */
-const MAPS_URL = "https://maps.app.goo.gl/JTZxoYr5SQxYpux68";
+const MAPS_URL = "https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic";
 const CANONICAL = "https://www.operavaglobal.com/businessverified/googlemaps";
 const OG_IMAGE =
   "https://res.cloudinary.com/sdaxzncs/image/upload/c_fill,w_1200,h_630,f_jpg,q_auto/v1786240859/Cover%20Photo.png";
@@ -44,9 +39,6 @@ export const onRequestGet: PagesFunction = async () => {
       "content-type": "text/html; charset=utf-8",
       "cache-control": "public, max-age=300",
       "x-robots-tag": "index, follow",
-      "x-content-type-options": "nosniff",
-      "referrer-policy": "strict-origin-when-cross-origin",
-      "x-frame-options": "SAMEORIGIN",
     },
   });
 };
