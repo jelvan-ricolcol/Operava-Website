@@ -54,8 +54,6 @@
       href="https://res.cloudinary.com/sdaxzncs/image/upload/Favicon_32x32.svg"
     />
 
-    <meta http-equiv="refresh" content="8;url=https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic" />
-
     <style>
       :root {
         --bg: #f6f0ff;
@@ -138,17 +136,19 @@
     <a class="skip" href="#maps-link">Skip to Google Maps link</a>
     <main>
       <article class="card">
-        <p class="status" role="status">Redirecting you to Operava on Google Maps…</p>
+        <p class="status" role="status">Opening Operava on Google Maps…</p>
         <h1>Operava Global Solutions</h1>
         <p>
-          This page takes visitors to the official Operava Google Maps listing.
-          Query-string destinations are ignored.
+          Tap the button to open the official listing in a new tab.
+          If the Google Maps app is installed, the device will open the app instead.
         </p>
         <div class="actions">
           <a
             id="maps-link"
             class="button"
             href="https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer"
           >Open Operava on Google Maps</a>
           <a class="home" href="https://www.operavaglobal.com/">Return to operavaglobal.com</a>
         </div>
@@ -156,12 +156,43 @@
     </main>
     <script>
       (function () {
-        var destination = "https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic";
+        var WEB = "https://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic";
+        var INTENT =
+          "intent://maps.app.goo.gl/MfpDV86cuqLvyRzx8?g_st=ic#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=" +
+          encodeURIComponent(WEB) +
+          ";end";
+
+        function mapsUrl() {
+          return /Android/i.test(navigator.userAgent || "") ? INTENT : WEB;
+        }
+
+        function openMaps(fromClick) {
+          var url = mapsUrl();
+          var opened = window.open(url, "_blank", "noopener,noreferrer");
+          if (!opened && !fromClick) {
+            window.location.assign(WEB);
+          }
+        }
+
+        var link = document.getElementById("maps-link");
+        if (link) {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            openMaps(true);
+            window.setTimeout(function () {
+              if (document.visibilityState === "visible") {
+                window.location.assign(WEB);
+              }
+            }, 1200);
+          });
+        }
+
         var ua = navigator.userAgent || "";
-        var crawler = /facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|Slackbot|Pinterest|Discordbot|TelegramBot|Googlebot/i.test(ua);
-        if (crawler) return;
+        if (/facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|Slackbot|Pinterest|Discordbot|TelegramBot|Googlebot/i.test(ua)) {
+          return;
+        }
         window.setTimeout(function () {
-          window.location.replace(destination);
+          openMaps(false);
         }, 400);
       })();
     </script>
