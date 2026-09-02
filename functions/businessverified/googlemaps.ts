@@ -15,8 +15,17 @@ export const onRequestGet: PagesFunction = async () => {
     <meta property="og:description" content="Find Operava Global Solutions on Google Maps and view our business location." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${CANONICAL}" />
-    <meta property="og:site_name" content="Operava Global Solutions" />
+    <meta property="og:site_name" content="OPERAVA" />
     <meta property="og:image" content="${OG_IMAGE}" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "OPERAVA",
+        "alternateName": ["OPERAVA GLOBAL SOLUTIONS", "OPERAVA Global Solutions", "operavaglobal.com"],
+        "url": "https://www.operavaglobal.com/"
+      }
+    </script>
   </head>
   <body>
     <p>Opening Operava on Google Maps…</p>
